@@ -45,6 +45,10 @@ export interface EnergyData {
   SolarPower: number;
   SolarEnergy: number;
   Consumption: number;
+  time: string;       // Ensure this property exists
+  consumption: number; // Ensure this property exists
+  cost: number;       // Ensure this property exists
+
 }
 
 // Executive Summary Interface
