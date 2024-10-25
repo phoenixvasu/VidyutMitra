@@ -169,4 +169,33 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="flex flex
+    <div className="flex flex-col space-y-6">
+      <h1 className="text-2xl font-bold">Welcome, {userData.name}</h1>
+      <Card>
+        <CardHeader>
+          <CardTitle>Dashboard Overview</CardTitle>
+          <CardDescription>Manage your energy consumption.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <StatsCards
+            totalSolarPower={totalSolarPower}
+            uniqueDays={uniqueDays}
+            userData={userData}
+          />
+          <input type="file" accept=".csv" onChange={handleFileUpload} />
+          {fileName && <p>File Uploaded: {fileName}</p>}
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <TariffMonitor />
+        <EnergyUsageAnalytics energyData={energyData} />
+        <SmartScheduling />
+        <SolarEnergyManagement />
+        <ForecastingRecommendations />
+        <CostBenefitAnalysis />
+        <UserNotifications />
+      </div>
+    </div>
+  );
+}
