@@ -53,7 +53,11 @@ export default function Dashboard() {
       },
     });
   }, []);
-
+const transformedEnergyData = energyData.map((data) => ({
+  time: data.time,            // Ensure these properties match
+  consumption: data.consumption, // Ensure these properties match
+  cost: data.cost             // Ensure these properties match
+}));
   // File upload handler
   const handleFileUpload = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -189,7 +193,7 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <TariffMonitor />
-        <EnergyUsageAnalytics energyData={energyData} />
+        <EnergyUsageAnalytics energyData={transformedEnergyData} />
         <SmartScheduling />
         <SolarEnergyManagement />
         <ForecastingRecommendations />
