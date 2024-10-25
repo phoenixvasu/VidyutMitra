@@ -1,5 +1,6 @@
 // types/user.ts
 export interface UserData {
+  name: string;
   hasSolarPanels: boolean;
   hasBatteryStorage: boolean;
   solarCapacity: number;
