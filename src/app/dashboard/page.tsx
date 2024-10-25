@@ -170,7 +170,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex flex-col space-y-6">
-      <h1 className="text-2xl font-bold">Welcome, {userData.name}</h1>
+      <h1 className="text-2xl font-bold">Welcome, {userData.name || "User"}</h1>
       <Card>
         <CardHeader>
           <CardTitle>Dashboard Overview</CardTitle>
