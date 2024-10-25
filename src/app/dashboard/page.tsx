@@ -9,14 +9,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
 import TariffMonitor from "@/components/dashboard/TariffMonitor";
- import EnergyUsageAnalytics from "@/components/dashboard/EnergyUsageAnalytics";
+import EnergyUsageAnalytics from "@/components/dashboard/EnergyUsageAnalytics";
 import SmartScheduling from "@/components/dashboard/SmartScheduling";
- import SolarEnergyManagement from "@/components/dashboard/SolarEnergyManagement";
-// import ForecastingRecommendations from "@/components/dashboard/ForecastingRecommendations";
-// import CostBenefitAnalysis from "@/components/dashboard/CostBenefitAnalysis";
-// import UserNotifications from "@/components/dashboard/UserNotifications";
+import SolarEnergyManagement from "@/components/dashboard/SolarEnergyManagement";
+import ForecastingRecommendations from "@/components/dashboard/ForecastingRecommendations";
+import CostBenefitAnalysis from "@/components/dashboard/CostBenefitAnalysis";
+import UserNotifications from "@/components/dashboard/UserNotifications";
 import StatsCards from "@/components/dashboard/StatsCards";
 import { useAuthContext } from "@/context/auth-context";
 import { fetchDISCOMData, fetchTOUHistory, fetchWeatherData } from "@/lib/api";
@@ -25,11 +24,6 @@ import { Discom, EnergyData, TOUData, UserData } from "@/types/user";
 import { doc, getDoc } from "firebase/firestore";
 import { parse } from "papaparse";
 import { toast } from "sonner";
-import ForecastingRecommendations from "@/components/dashboard/ForecastingRecommendations";
-import CostBenefitAnalysis from "@/components/dashboard/CostBenefitAnalysis";
-import UserNotifications from "@/components/dashboard/UserNotifications";
-//import SolarEnergyManagement from "@/components/dashboard/SolarEnergyManagement";
-//import SmartScheduling from "@/components/dashboard/SmartScheduling";
 
 export default function Dashboard() {
   // State declarations
@@ -174,77 +168,5 @@ export default function Dashboard() {
     );
   }
 
-
-
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
-      <main className="flex-1 py-8 px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          
-          {/* Tariff Monitor Component */}
-          {/* Tariff Monitor Component */}
-       
-{/* Tariff Monitor Component */}
-<section className="bg-white shadow rounded-lg p-6">
-  <h2 className="text-xl font-bold mb-4">Tariff Monitor</h2>
-  <p>Real-time and forecasted ToU and ToD tariffs displayed here.</p>
-  {/* Add real-time tariff data and forecasted rates */}
-  <TariffMonitor discom={discomInfo?.name || ''} /> {/* Pass the DISCOM name */}
-</section>
-
-          {/* Energy Usage Analytics Component */}
-          <section className="bg-white shadow rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold mb-4">Tariff Monitor</h2>
-        {/* Include TariffMonitor component here */}
-      </section>
-
-      {/* Energy Usage Analytics Section */}
-      <section className="bg-white shadow rounded-lg p-6 mb-8">
-        <EnergyUsageAnalytics />
-      </section>
-          {/* Smart Scheduling Component */}
-          <section className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Smart Scheduling</h2>
-            <SmartScheduling />
-            {/* Interface for scheduling appliance usage */}
-          </section>
-
-          {/* Solar Energy Management Component */}
-          <section className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Solar Energy Management</h2>
-            <SolarEnergyManagement></SolarEnergyManagement>
-          </section>
-
-          {/* Forecasting and Recommendations Component */}
-          <section className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Forecasting and Recommendations</h2>
-            <ForecastingRecommendations></ForecastingRecommendations>
-          </section>
-
-          {/* Cost-Benefit Analysis Component */}
-          <section className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Cost-Benefit Analysis</h2>
-            <CostBenefitAnalysis/>
-            {/* Insert cost projections and savings analysis */}
-          </section>
-
-          {/* User Notifications and Alerts Component */}
-          <section className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">User Notifications and Alerts</h2>
-           <UserNotifications />
-          </section>
-          <section className="p-6 bg-gray-50 rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-      <StatsCards
-        // userData={userData}
-        totalSolarPower={totalSolarPower}
-        uniqueDays={uniqueDays}
-        locationName={locationName}
-        weatherData={weatherData}
-      />
-    </section>
-        </div>
-      </main>
-    </div>
-  );
-}
+    <div className="flex flex
