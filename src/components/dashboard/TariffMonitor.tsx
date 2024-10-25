@@ -9,8 +9,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 import { Line } from "react-chartjs-2";
+import { useEffect, useState } from "react";
+import tariffData from '../../data/dummytariffData.json'; // Adjust the path as needed
 
 // Register the components
 ChartJS.register(
@@ -22,11 +23,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-import { useEffect, useState } from "react";
-
-// Import the tariff data JSON file
-import tariffData from '../../data/dummytariffData.json'; // Adjust the path as needed
 
 interface TariffData {
   time: string;
