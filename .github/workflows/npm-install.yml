@@ -1,0 +1,30 @@
+name: Install Dependencies
+
+on: [push, pull_request]
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # Specify your Node.js version here
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Set npm registry
+        run: npm config set registry https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: |
+          rm -rf node_modules # Clear existing modules
+          npm install # Install dependencies
+
+      - name: Verify installation
+        run: npm run build # Or any other command to verify installation success
